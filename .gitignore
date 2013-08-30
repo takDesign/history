@@ -1,2 +1,10 @@
+node_modules
+resizeImages
+changelog.md
+package.json
+README.md
+server.js
+webserver_node START.bat
+webserver_node VIEW
 # danactive's personal gallery
 gallery-dan
