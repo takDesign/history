@@ -133,6 +133,9 @@
   "readmeFilename": "README.md",
   "tuxharness": "./tuxharness.js",
   "jest": {
+    "setupFiles": [
+      "./server/test/jestSetup.js"
+    ],
     "testEnvironment": "node",
     "testMatch": [
       "**/?(*.)+(jest).js?(x)"
