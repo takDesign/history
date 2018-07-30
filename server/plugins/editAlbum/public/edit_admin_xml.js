@@ -99,7 +99,13 @@ const album = {
 
       $.each(schema, (elementId, xmlName) => { // loop thru all form fields to display XML data
         let fieldValue;
-        if (xmlName.indexOf('.') === -1) {
+        if (xmlName === 'geo.lat') {
+          if (!data.geo) return true; // continue
+          elementId = 'geo';
+          fieldValue = `${data.geo.lat}, ${data.geo.lon}`;
+        } else if (xmlName === 'geo.lon') {
+          return true; // continue
+        } else if (xmlName.indexOf('.') === -1) {
           fieldValue = data[xmlName];
         } else { // dot syntax found
           const xmlNameArray = xmlName.split('.');

@@ -30,14 +30,14 @@ describe('Edit Album - Field Co-ordinate (React Component)', () => {
     }
 
     if (outLat) {
-      actual = wrapper.find('#geo_lat').text();
+      actual = wrapper.find('#geo_lat').prop('value');
       expected = outLat;
 
       expect(actual).toEqual(expected);
     }
 
     if (outLon) {
-      actual = wrapper.find('#geo_lon').text();
+      actual = wrapper.find('#geo_lon').prop('value');
       expected = outLon;
 
       expect(actual).toEqual(expected);

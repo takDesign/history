@@ -1,12 +1,12 @@
 const React = require('react');
 
 function getLatitude(coordinate) {
-  if (!coordinate.includes(',')) return null;
+  if (!coordinate.includes(',')) return '';
   return coordinate.split(',')[0].trim();
 }
 
 function getLongitude(coordinate) {
-  if (!coordinate.includes(',')) return null;
+  if (!coordinate.includes(',')) return '';
   return coordinate.split(',')[1].trim();
 }
 
@@ -52,9 +52,9 @@ class Coordinate extends React.Component {
         <span id="geoPreview">{coordinate}</span>
         <br />
         {'['}
-        <span id="geo_lat">{latitude}</span>
+        <input type="text" id="geo_lat" value={latitude} />
         {','}
-        <span id="geo_lon">{longitude}</span>
+        <input type="text" id="geo_lon" value={longitude} />
         {']'}
         <span className="suggestions" />
       </span>
