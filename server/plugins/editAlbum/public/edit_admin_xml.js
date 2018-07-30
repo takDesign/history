@@ -116,13 +116,6 @@ const album = {
 
       album.photo.Preview(data.filename);
     },
-    SplitGeoOnPaste: function SplitGeoOnPaste() {
-      if (this.value.indexOf(',') !== -1) {
-        const geocode = this.value.split(',');
-        $('#geo_lat').val(geocode[0].trim());
-        $('#geo_lon').val(geocode[1].trim());
-      }
-    },
   },
   photo: {
     recentIndex: 0, // for selecting a photo range & keyboard nav
@@ -281,7 +274,6 @@ $(window).ready(() => {
   $('#changeSort').click(album.photo.Sort);
   $('#saveToJson').click(SaveToJson);
   $('input[type=checkbox]').click(ToggleDisable);
-  $('#geo_lat').change(album.form.SplitGeoOnPaste);
 
   album.form.schema.GetDom().add('textarea#rawAlbumJsonToXml').keydown(($e) => {
     $e.stopPropagation(); // allow text selction, not photo pagination

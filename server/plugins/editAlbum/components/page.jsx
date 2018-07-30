@@ -104,15 +104,7 @@ function Page(props) {
                   <input type="checkbox" title="Check to disable editability" />
                   <span className="suggestions" />
                 </p>
-                <p>
-                  <label htmlFor="geo_lat">
-                    Geolocation
-                    <input type="text" id="geo_lat" className="half" tabIndex="10" title="Latitude" />
-                  </label>
-                  <input type="text" id="geo_lon" className="half" tabIndex="11" title="Longitude" />
-                  <input type="checkbox" title="Check to disable editability" />
-                  <span className="suggestions" />
-                </p>
+                <p id="coordinate" />
                 <input type="submit" value="Save" id="saveToJson" tabIndex="12" />
               </fieldset>
             </form>
