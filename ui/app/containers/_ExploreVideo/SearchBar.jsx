@@ -18,6 +18,11 @@ function getGeoCode(qs) {
 export default function SearchBar({
   onSearchChange: changeSearch,
 }) {
+  // export default function SearchBar(props) {
+  // extract onSearchChange from props
+  // const { onSearchChange } = props;
+  // const changeSearch = onSearchChange;
+
   const [searchOrder, setSearchOrder] = useState(defaults.searchOrder);
   const [searchValue, setSearchValue] = useState(getGeoCode(getQS()) || defaults.geocode);
 

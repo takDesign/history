@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import AlbumViewPage from '../AlbumViewPage/Loadable';
-import ExploreVideo from '../ExploreVideo';
+// import ExploreVideo from '../ExploreVideo';
+import ExploreVideo from '../ExploreMedia';
 import HomePage from '../HomePage/Loadable';
 import FeaturePage from '../FeaturePage/Loadable';
 import GalleryViewPage from '../GalleryViewPage/Loadable';
