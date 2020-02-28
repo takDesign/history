@@ -8,7 +8,6 @@ export default function PhotoList(props) {
   const photoItems = photos.map((photo, index) => (
     <PhotoListItem
       index={index}
-      // onVideoSelect={onVideoSelect}
       key={photo.id}
       photo={photo}
     />

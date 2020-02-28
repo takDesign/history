@@ -34,7 +34,8 @@ export default function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        {/* <Route exact path="/" component={HomePage} /> */}
+        <Route path="/" component={ExploreVideo} />
         <Route path="/album/view/:album" component={AlbumViewPage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="/explore" component={ExploreVideo} />

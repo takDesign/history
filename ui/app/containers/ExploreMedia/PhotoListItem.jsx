@@ -11,16 +11,16 @@ export default function PhotoListItem({ index, photo }) {
   const tabOffset = 2;
   const imageUrl = photo.src;
 
-  const imageList = styled.li`
+  const ImageList = styled.li`
 list-style:none;
 display: inline-block;
 `;
 
   return (
-    <imageList>
+    <ImageList>
       {/* <img src="{imageUrl}" alt="From flickr" onKeyPress={handleKeyPress} role="image" tabIndex={tabOffset + index} /> */}
       <img src={imageUrl} alt="From flickr" tabIndex={tabOffset + index} />
-    </imageList>
+    </ImageList>
   );
 }
 

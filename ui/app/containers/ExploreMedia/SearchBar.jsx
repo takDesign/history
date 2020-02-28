@@ -1,8 +1,7 @@
-/* global URL, window */
+/* global URL, window navigator */
 import React, { useEffect, useState } from 'react';
 
 const defaults = {
-  geocode: '13.7524000,100.5021833',
   instruction: 'Keyword or GeoCode',
   searchOrder: 'relevance',
 };
@@ -16,30 +15,44 @@ function getGeoCode(qs) {
 }
 
 export default function SearchBar({
-  onSearchChange: changeSearch,
+  onSearchChangeVideo: changeSearchVideo,
+  onSearchChangePhoto: changeSearchPhoto,
 }) {
   // export default function SearchBar(props) {
   // extract onSearchChange from props
   // const { onSearchChange } = props;
   // const changeSearch = onSearchChange;
 
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      defaults.geocode = `${position.coords.latitude},${position.coords.longitude}`;
+      // console.log(defaults.geocode);
+    },
+    (error) => {
+      defaults.geocode = '13.7524000,100.5021833';
+      console.log('Could not get your current location', error.code);
+    },
+  );
+
   const [searchOrder, setSearchOrder] = useState(defaults.searchOrder);
   const [searchValue, setSearchValue] = useState(getGeoCode(getQS()) || defaults.geocode);
 
   useEffect(() => {
-    changeSearch(searchValue, { searchOrder });
+    changeSearchVideo(searchValue, { searchOrder });
+    changeSearchPhoto(searchValue, { searchOrder });
   }, []);
 
   const handleSearchChange = (keyword) => {
     setSearchValue(keyword);
-
-    changeSearch(keyword, { searchOrder });
+    changeSearchVideo(keyword, { searchOrder });
+    changeSearchPhoto(keyword, { searchOrder });
   };
 
   const onOrderChange = (order) => {
     setSearchOrder(order);
-
-    changeSearch(searchValue, { searchOrder: order });
+    changeSearchVideo(searchValue, { searchOrder: order });
+    changeSearchPhoto(searchValue, { searchOrder: order });
   };
 
   return (
